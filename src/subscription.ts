@@ -4,26 +4,28 @@ import {
 } from './lexicon/types/com/atproto/sync/subscribeRepos'
 import { FirehoseSubscriptionBase, getOpsByType } from './util/subscription'
 
+let PVmembers: string[] = [
+  '@progressivevictory.win',
+  '@zenthia.bsky.social',
+  '@rotful.bsky.social',
+  '@emmadearest.bsky.social'
+]
+
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
   async handleEvent(evt: RepoEvent) {
     if (!isCommit(evt)) return
     const ops = await getOpsByType(evt)
 
-    // This logs the text of every post off the firehose.
-    // Just for fun :)
-    // Delete before actually using
-    for (const post of ops.posts.creates) {
-      console.log(post.record.text)
-    }
-
     const postsToDelete = ops.posts.deletes.map((del) => del.uri)
     const postsToCreate = ops.posts.creates
       .filter((create) => {
-        // only alf-related posts
-        return create.record.text.toLowerCase().includes('alf')
+        // only PV posts
+        // return create.record.text.toLowerCase().includes('alf')
+        create.record.text.toLocaleUpperCase()
+        return PVmembers.includes(create.author.toLowerCase())
       })
       .map((create) => {
-        // map alf-related posts to a db row
+        // map PV posts to a db row
         return {
           uri: create.uri,
           cid: create.cid,
