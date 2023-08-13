@@ -2,6 +2,13 @@
 
 This is a starter kit for creating ATProto Feed Generators. It's not feature complete, but should give you a good starting ground off of which to build and deploy a feed.
 
+## Ideas
+- The first post in the feed is always a @progressivevictory.win post
+- filters for PV members
+- filters for people mentioning Progressive Victory (deprioritized)
+- filters for 
+
+
 ## Overview
 
 Feed Generators are services that provide custom algorithms to users through the AT Protocol.
