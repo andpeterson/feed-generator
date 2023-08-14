@@ -4,12 +4,15 @@ import {
 } from './lexicon/types/com/atproto/sync/subscribeRepos'
 import { FirehoseSubscriptionBase, getOpsByType } from './util/subscription'
 
+// # https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=${YOUR_HANDLE}
 let PVmembers = {
   '@progressivevictory.win': 'did:plc:4ndyufcdqvuihxwsicuaboru',
   '@zenthia.bsky.social': 'did:plc:7j42jgeg2ur7mn64llu5pm4q',
   '@rotful.bsky.social': 'did:plc:jt3dj4hrestgd45vaqoihjtc',
   '@emmadearest.bsky.social': 'did:plc:puadw3m3eeifb4ueo6ny5633',
-  '@astroria.bsky.social': 'did:plc:6fkhq4aeky6mf63calhk5l57'
+  '@astroria.bsky.social': 'did:plc:6fkhq4aeky6mf63calhk5l57',
+  '@maydae.bsky.social': 'did:plc:syk2r5kmjimipsgqnl6s24wq',
+  '@mben92.bsky.social': 'did:plc:sxv3pfhdvo7gbdfo3y6zonov'
 }
 
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
