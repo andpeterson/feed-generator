@@ -26,7 +26,8 @@ let PVmembers = {
   '@helenasden.bsky.social': 'did:plc:sqt2di6xgmqjybutobtnx76d',
   '@samhandle.bsky.social': 'did:plc:fytavbss55b2ssbmpzdppmon',
   '@meronoir.bsky.social': 'did:plc:wfckyjtg2v7ddgralirwvraf',
-  '@coolmn16.bsky.social': 'did:plc:im5hblti5dxwwytsw65zyndk'
+  '@coolmn16.bsky.social': 'did:plc:im5hblti5dxwwytsw65zyndk',
+  '@silvertrianon.bsky.social': 'did:plc:olrtaqtwcmfta5dqkkzrpuxr'
 }
 
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
