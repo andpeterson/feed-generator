@@ -12,7 +12,10 @@ let PVmembers = {
   '@emmadearest.bsky.social': 'did:plc:puadw3m3eeifb4ueo6ny5633',
   '@astroria.bsky.social': 'did:plc:6fkhq4aeky6mf63calhk5l57',
   '@maydae.bsky.social': 'did:plc:syk2r5kmjimipsgqnl6s24wq',
-  '@mben92.bsky.social': 'did:plc:sxv3pfhdvo7gbdfo3y6zonov'
+  '@mben92.bsky.social': 'did:plc:sxv3pfhdvo7gbdfo3y6zonov',
+  '@atkatandrea.bsky.social': 'did:plc:ed5n2hrrgqnbfx7wfpgzyqre',
+  '@kindredspirit.bsky.social': 'did:plc:vh4bc4ryrt6a6hmnltwmbjpx',
+  '@okami.codes': 'did:plc:ihjhydotnviqfmkk5jnd33er'
 }
 
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
