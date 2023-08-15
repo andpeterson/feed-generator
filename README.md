@@ -50,7 +50,7 @@ We've taken care of setting this server up with a did:web. However, you're free 
 ### Deploying your feed
 Your feed will need to be accessible at the value supplied to the `FEEDGEN_HOSTNAME` environment variable.
 
-The service must be set up to respond to HTTPS queries over port 443.
+The service must be set up to respond to HTTPS queries over port 3000.
 
 ### Publishing your feed
 
