@@ -35,19 +35,16 @@ const run = async () => {
   // NO NEED TO TOUCH ANYTHING BELOW HERE
   // -------------------------------------
 
-  console.log('it begins')
   if (!process.env.FEEDGEN_SERVICE_DID && !process.env.FEEDGEN_HOSTNAME) {
     throw new Error('Please provide a hostname in the .env file')
   }
   const feedGenDid =
     process.env.FEEDGEN_SERVICE_DID ?? `did:web:${process.env.FEEDGEN_HOSTNAME}`
 
-  console.log('agent prep')
   // only update this if in a test environment
   const agent = new AtpAgent({ service: 'https://bsky.social' })
   await agent.login({ identifier: handle, password })
 
-  console.log('logged in')
 
   try {
     await agent.api.app.bsky.feed.describeFeedGenerator()
@@ -56,7 +53,6 @@ const run = async () => {
       'The bluesky server is not ready to accept published custom feeds yet',
     )
   }
-  console.log('accepting feeds')
 
   let avatarRef: BlobRef | undefined
   if (avatar) {
@@ -75,7 +71,6 @@ const run = async () => {
     avatarRef = blobRes.data.blob
   }
 
-  console.log('accepted images')
 
   await agent.api.com.atproto.repo.putRecord({
     repo: agent.session?.did ?? '',
