@@ -1,0 +1,34 @@
+<script>
+  const url = "https://bsky.social/xrpc/com.atproto.identity.resolveHandle"
+  const getDID = () => {
+    const handle = document.getElementById("userHandle").value; 
+    fetch(url + "?handle=" + handle, {
+      method: "GET",
+    })
+    .then(async res => {
+      if(res.ok){
+        document.getElementById("userDID").value = JSON.parse(await res.text()).did;
+        document.getElementById("error").innerHTML = ""; 
+        document.getElementById("submit").removeAttribute("disabled");
+      }
+      else {
+        console.log(e);
+        document.getElementById("error").innerHTML = "error: Handle not found"; 
+      }
+    })
+    .catch(e => {
+      console.log(e);
+      document.getElementById("error").innerHTML = "error: Handle not found"; 
+    })
+  }
+</script>
+
+<form action="/addMemberData">
+  <label for="userHandle">User Handle:</label>
+  <input type="text" id="userHandle" name="userHandle"><br><br>
+  <label for="userDID">User DID:</label>
+  <button type="button" id="getDIDbutton" onclick="getDID()">Get User's DID</button>
+  <input type="text" id="userDID" name="userDID"><br><br>
+  <input type="submit" id="submit" value="Submit" disabled>
+</form>
+<p id="error" style="color: red"></p>
