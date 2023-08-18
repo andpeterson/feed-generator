@@ -55,6 +55,7 @@ export class FeedGenerator {
     }
     feedGeneration(server, ctx)
     describeGenerator(server, ctx)
+    app.use(express.urlencoded({ extended: false }));
     app.use(server.xrpc.router)
     app.use(router(ctx))
 

@@ -6,7 +6,11 @@ This is a starter kit for creating ATProto Feed Generators. It's not feature com
 - The first post in the feed is always a @progressivevictory.win post
 - filters for PV members
 - filters for people mentioning Progressive Victory (deprioritized)
-- filters for 
+- new member data cleanup
+- discord bot for new member
+- query storing invite codes
+- query for retrieving invite codes
+- reduce amount of replies in feed (maybe if reply was to another PV member don't include it if its not a couple hours old)
 
 
 ## Overview
